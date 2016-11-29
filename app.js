@@ -13,4 +13,7 @@ app.use('/views', express.static(__dirname + '/resources/views'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
+require('./config/lib/middleware')(app);
+require('./config/lib/csrf')(app);
+
 module.exports = app;
