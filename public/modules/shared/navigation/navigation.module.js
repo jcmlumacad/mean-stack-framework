@@ -1,17 +1,20 @@
-(function(){
-	angular.module('navigation',[])
-		.directive('href',href);
-		href.$inject = ['$window'];
-		function href($window){
-			return {
-				restrict:'A',
-				link:linkF
-			}
+(function() {
+    'use strict';
 
-			function linkF(scope,element,attr){
-				element.on('click',function(){
-					window.location.href = attr.href;
-				});
-			}
-		}
+    angular.module('navigation', [])
+        .directive('href', href);
+    href.$inject = ['$window'];
+
+    function href($window) {
+        return {
+            restrict: 'A',
+            link: linkFunction
+        }
+
+        function linkFunction(scope, element, attr) {
+            element.on('click', function() {
+                window.location.href = attr.href;
+            });
+        }
+    }
 })();
