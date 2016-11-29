@@ -17,5 +17,6 @@ require('./config/lib/middleware')(app);
 require('./config/lib/csrf')(app);
 require('./config/lib/handler')(app);
 require('./config/lib/mongoose')(app);
+require('./config/lib/routes')(app);
 
 module.exports = app;
