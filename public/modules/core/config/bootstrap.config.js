@@ -9,7 +9,6 @@
     angular
         .module(app.moduleName)
         .config(bootstrapConfig);
-
     bootstrapConfig.$inject = ['$httpProvider'];
 
     function bootstrapConfig($httpProvider) {

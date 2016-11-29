@@ -14,7 +14,7 @@
     ];
 
     var config = {
-        moduleName : moduleName, //
+        moduleName: moduleName,
         moduleSharedDependencies: moduleSharedDependencies,
         registerModule: registerModule
     };
