@@ -18,5 +18,6 @@ require('./config/lib/csrf')(app);
 require('./config/lib/handler')(app);
 require('./config/lib/mongoose')(app);
 require('./config/lib/routes')(app);
+require('./config/lib/passport')(app);
 
 module.exports = app;
