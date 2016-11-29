@@ -15,5 +15,6 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 require('./config/lib/middleware')(app);
 require('./config/lib/csrf')(app);
+require('./config/lib/handler')(app);
 
 module.exports = app;
