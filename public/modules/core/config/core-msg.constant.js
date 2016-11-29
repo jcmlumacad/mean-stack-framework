@@ -7,8 +7,8 @@
     'use strict';
 
     var coreMsg = {
-        'ERR_PERMISSION' : 'Sorry, you have no permission.',
-        'ERR_UNKNOWN' : 'Unknown error occured.',
+        'ERR_PERMISSION': 'Sorry, you have no permission.',
+        'ERR_UNKNOWN': 'Unknown error occured.',
     };
 
     angular

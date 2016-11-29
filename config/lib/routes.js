@@ -29,7 +29,7 @@ module.exports = function(app) {
         req.logout();
         res.redirect('/');
     });
-    app.all('/*', middleware('auth'), function(req, res) {
+    app.all('/*', function(req, res) {
         res.sendFile(path.join(__dirname, '../../resources/views', 'index.html'));
     });
 };

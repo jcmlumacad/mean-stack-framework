@@ -3,13 +3,12 @@
  * @author TMJP Web Development Team 2016
  */
 
- (function(app) {
+(function(app) {
     'use strict';
 
     angular
         .module(app.moduleName)
-        .factory('errorInterceptor',errorInterceptor);
-
+        .factory('errorInterceptor', errorInterceptor);
     errorInterceptor.$inject = ['$q', '$log', 'ResponseErrorEvent', 'CORE_MSG'];
 
     function errorInterceptor($q, $log, ResponseErrorEvent) {
