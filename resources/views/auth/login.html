@@ -1,16 +1,13 @@
-
-
 <div class="login-container">
-
-	<div class="login-page">
-	  <div class="form">
-	    <form class="login-form" ng-submit="ac.login()">
-	      <input type="text" placeholder="username" ng-model = "ac.username"/>
-	      <input type="password" placeholder="password" ng-model = "ac.password"/>
-	      <button>login</button>
-	      <p class="message">Not registered? <a ui-sref="register"/>Create Account</a></p>
-	    </form>
-	  </div>
-	</div>
-
+  <div class="login-page">
+    <div class="form">
+      <form class="login-form" ng-submit="ac.login()">
+        <input type="text" placeholder="username" ng-model="ac.username" />
+        <input type="password" placeholder="password" ng-model="ac.password" />
+        <button>login</button>
+        <p class="message">Not registered? <a ui-sref="register" />Create Account</a>
+        </p>
+      </form>
+    </div>
+  </div>
 </div>
