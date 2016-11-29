@@ -7,6 +7,10 @@ var express = require('express'),
 require('dotenv').load({ silent: true });
 
 // Views
-app.use('/public', express.static(__dirname + '/public'));
+app.use('/assets', express.static(__dirname + '/public/assets'));
+app.use('/modules', express.static(__dirname + '/public/modules'));
+app.use('/views', express.static(__dirname + '/resources/views'));
+app.use('/node_modules', express.static(__dirname + '/node_modules'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 module.exports = app;
