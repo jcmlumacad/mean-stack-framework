@@ -2,8 +2,7 @@
 
 var fs = require('fs'),
     path = require('path'),
-    route = require('../../vendor/router'),
-    middleware = require('./../../modules/core/core.middleware');
+    route = require('../../vendor/router');
 
 module.exports = function(app) {
     /* Load All Routes */
@@ -24,12 +23,4 @@ module.exports = function(app) {
     }
     
     recursiveRoutes('modules');
-
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
-    });
-    app.all('/*', function(req, res) {
-        res.sendFile(path.join(__dirname, '../../resources/views', 'index.html'));
-    });
 };
