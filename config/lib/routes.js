@@ -16,7 +16,7 @@ module.exports = function(app) {
             if (stat.isDirectory()) {
                 recursiveRoutes(pathName);
             } else if (file.indexOf('.routes') >= 0) {
-                var name = pathName.replace('.js', '').replace('\\', '/');
+                var name = pathName.replace('.js', '').replace(/\\/g, '/');
                 require('./../../' + name)(app);
             }
         });
