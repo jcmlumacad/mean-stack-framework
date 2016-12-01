@@ -9,7 +9,6 @@ module.exports = function(app) {
         res.redirect('/');
     });
     app.all('/*', middleware('auth'), function(req, res) {
-        console.log('test');
         res.sendFile(path.join(__dirname, '../../resources/views', 'index.html'));
     });
 };
