@@ -23,4 +23,12 @@ module.exports = function(app) {
     }
     
     recursiveRoutes('modules');
+
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+    app.all('/*', function(req, res) {
+        res.sendFile(path.join(__dirname, '../../resources/views', 'index.html'));
+    });
 };
