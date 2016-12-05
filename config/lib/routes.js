@@ -2,12 +2,18 @@
 
 var fs = require('fs'),
     path = require('path'),
+    methodOverride = require('method-override'),
+    bodyParser = require('body-parser'),
     route = require('../../vendor/router');
 
 module.exports = function(app) {
     /* Load All Routes */
     route.setApp(app);
 
+    app.use(methodOverride('X-HTTP-Method-Override'));
+    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.json());
+    
     function recursiveRoutes(folderName) {
         fs.readdirSync(folderName).forEach(function (file) {
             var pathName = path.join(folderName, file);
