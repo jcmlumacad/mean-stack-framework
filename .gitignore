@@ -1,3 +1,6 @@
-bower_components/
-node_modules/
 .env
+.sass-cache/
+public/dist/
+public/assets/
+node_modules/
+bower_components/

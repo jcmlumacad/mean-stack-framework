@@ -2,33 +2,33 @@
 
 var fs = require('fs'),
     path = require('path'),
-    route = require('../../vendor/router');
+    route = require('../../vendor/router'),
+    middleware = require('./../../modules/core/server/core.middleware');
 
-module.exports = function(app) {
+module.exports = function (app) {
     /* Load All Routes */
     route.setApp(app);
 
     function recursiveRoutes(folderName) {
-        fs.readdirSync(folderName).forEach(function (file) {
-            var pathName = path.join(folderName, file);
+        var normalizedPath = path.join(__dirname, folderName);
+
+        fs.readdirSync(normalizedPath).forEach(function (file) {
+            var pathName = path.join(normalizedPath, file);
             var stat = fs.lstatSync(pathName);
 
             if (stat.isDirectory()) {
-                recursiveRoutes(pathName);
+                recursiveRoutes(folderName + '/' + file);
             } else if (file.indexOf('.routes') >= 0) {
                 var name = pathName.replace('.js', '').replace(/\\/g, '/');
-                require('./../../' + name)(app);
+                require(name)(app);
             }
         });
     }
 
-    recursiveRoutes('modules');
+    recursiveRoutes('./../../modules');
 
-    app.get('/logout', function(req, res) {
+    app.get('/logout', function (req, res) {
         req.logout();
-        res.redirect('/');
-    });
-    app.all('/*', function(req, res) {
-        res.sendFile(path.join(__dirname, '../../resources/views', 'index.html'));
+        res.redirect('/login');
     });
 };
