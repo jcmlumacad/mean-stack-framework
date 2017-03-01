@@ -1,3 +1,8 @@
+/**
+ * Core Run in Angular
+ * @author TMJP Engineering Team 2016
+ */
+
 (function () {
     'use strict';
 

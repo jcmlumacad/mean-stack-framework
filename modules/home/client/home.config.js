@@ -1,3 +1,8 @@
+/**
+ * @author TMJP Web Development Team
+ * @copyright 2016
+ */
+
 (function () {
     'use strict';
 
@@ -6,7 +11,7 @@
     config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
     function config($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise('/');
         $stateProvider
             .state('home', {
                 url: '/',
@@ -18,7 +23,7 @@
                         controllerAs: 'hc',
                     }
                 }
-            })
+            });
         $locationProvider.html5Mode(true);
     }
 })();

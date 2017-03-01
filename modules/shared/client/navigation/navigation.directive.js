@@ -11,7 +11,7 @@
             link: linkFunction
         }
 
-        function linkFunction (scope, element, attr) {
+        function linkFunction(scope, element, attr) {
             element.on('click', function () {
                 window.location.href = attr.href;
             });

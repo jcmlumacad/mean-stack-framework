@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="public/assets/css/style.css">
 </head>
 
-<body>
+<body ng-controller="AuthController as ac">
   <div id="main">
     <div ui-view="nav"></div>
     <div ui-view="content"></div>
@@ -22,7 +22,7 @@
 
   <script src="public/dist/core/core.min.js"></script>
   <script src="public/dist/modules.min.js"></script>
-  <script src="public/dist/config/config.js"></script>
+  <script src="public/dist/config/config.min.js"></script>
   <script src="public/dist/auth/auth.min.js"></script>
   <script src="public/dist/shared/shared.min.js"></script>
 </body>

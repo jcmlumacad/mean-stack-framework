@@ -3,19 +3,17 @@
 
     angular.module('auth')
         .config(config);
-    config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider'];
 
-    function config($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise("/login");
+    function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+        $urlRouterProvider.otherwise('/login');
         $stateProvider
             .state('login', {
                 url: '/login',
                 views: {
                     'nav': { templateUrl: 'views/auth/nav.html' },
                     'content': {
-                        templateUrl: 'views/auth/login.html',
-                        controller: 'AuthController',
-                        controllerAs: 'ac',
+                        templateUrl: 'views/auth/login.html'
                     }
                 }
             })
@@ -24,9 +22,7 @@
                 views: {
                     'nav': { templateUrl: 'views/auth/nav.html' },
                     'content': {
-                        templateUrl: 'views/auth/register.html',
-                        controller: 'AuthController',
-                        controllerAs: 'ac',
+                        templateUrl: 'views/auth/register.html'
                     }
                 }
             });

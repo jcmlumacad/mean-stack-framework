@@ -3,20 +3,22 @@
 
     angular.module('auth')
         .controller('AuthController', AuthController);
-    AuthController.$inject = ['AuthFactory', '$window'];
+    AuthController.$inject = ['AuthFactory'];
 
-    function AuthController(AuthFactory, $window) {
+    function AuthController(AuthFactory) {
         var vm = this;
-        vm.current = $window.location.pathname;
         vm.username = '';
         vm.password = '';
 
-        vm.login = function () {
-            AuthFactory.login({ username: vm.username, password: vm.password });
-        };
+        vm.login = login;
+        vm.register = register;
 
-        vm.register = function () {
+        function login() {
+            AuthFactory.login({ username: vm.username, password: vm.password });
+        }
+
+        function register() {
             AuthFactory.register({ username: vm.username, password: vm.password });
-        };
+        }
     }
 })();

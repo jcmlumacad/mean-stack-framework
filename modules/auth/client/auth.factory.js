@@ -26,7 +26,7 @@
                 if (res.data) {
                     window.location.assign('/');
                 } else {
-                    alert('username already exist');
+                    alert('Username already exist');
                 }
             });
         }

@@ -23,11 +23,12 @@
     "tmj-passport": "^1.0.0",
     "socket.io": "^1.7.1"
   },
-  "devDependencies": {
+  "devDepencies": {
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
-    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "karma": "^1.5.0",
+    "karma-phantomjs-launcher": "^1.0.2"
   }
 }

@@ -1,5 +1,11 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+        watch: {
+            src: {
+                files: ['modules/**/*.js', '!modules/**/server/*.js', '!modules/**/server/**/*.js', 'resources/assets/style.scss'],
+                tasks: ['browserify', 'uglify', 'sass']
+            }
+        },
         browserify: {
             auth: {
                 src: 'modules/auth/client/*.js',
@@ -27,6 +33,10 @@ module.exports = function(grunt) {
             shared: {
                 src: 'modules/shared/client/**/*.js',
                 dest: 'public/dist/shared/shared.js'
+            },
+            user: {
+                src: 'modules/user/client/**/*.js',
+                dest: 'public/dist/user/user.js'
             }
         },
         uglify: {
@@ -59,6 +69,11 @@ module.exports = function(grunt) {
                 options: { mangle: false, compress: true },
                 src: 'public/dist/shared/shared.js',
                 dest: 'public/dist/shared/shared.min.js'
+            },
+            user: {
+                options: { mangle: false, compress: true },
+                src: 'public/dist/user/user.js',
+                dest: 'public/dist/user/user.min.js'
             }
         },
         sass: {
@@ -67,12 +82,6 @@ module.exports = function(grunt) {
                     'public/assets/css/style.css' : 'resources/assets/style.scss'
                 }
             }
-        },
-        watch: {
-            src: {
-                files: ['modules/**/client/*.js', 'resources/assets/style.scss'],
-                tasks: ['browserify', 'uglify', 'sass']
-            }
         }
     });
 
@@ -80,5 +89,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.registerTask('default', ['browserify', 'uglify', 'sass', 'watch']);
+    grunt.registerTask('default', ['watch']);
 };

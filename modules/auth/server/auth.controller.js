@@ -29,7 +29,7 @@ module.exports = function (method) {
                     if (throwErr) {
                         return res.status(throwErr.code).send(throwErr.message);
                     }
-                    console.log(user);
+
                     req.logIn(user, function (err) {
                         if (err) {
                             return res.status(400).send(err);
@@ -46,10 +46,10 @@ module.exports = function (method) {
     function register() {
         return function (req, res, next) {
             if ( ! req.route.methods.get) {
-                // Register Auth
+                console.log('TODO: Register');
             } else {
                 res.sendFile(path.join(__dirname, '../../../resources/views/auth', 'index.html'));
             }
         }
     }
-}
+};

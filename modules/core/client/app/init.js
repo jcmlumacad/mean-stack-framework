@@ -2,7 +2,7 @@
  * Initialize the core module and its dependencies
  * @author TMJP Engineering Team 2016
  */
- 
+
 (function (app) {
     'use strict';
 

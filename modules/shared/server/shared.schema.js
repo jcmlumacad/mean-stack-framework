@@ -25,7 +25,7 @@ module.exports = exports = function plugin(schema, options) {
     });
 
     // Auto save created_at and updated_at
-    schema.pre('save', function(next) {
+    schema.pre('save', function (next) {
         var currentDate = new Date(); // current date
         this.updated_at = currentDate; // update the updated_at
         if (!this.created_at)

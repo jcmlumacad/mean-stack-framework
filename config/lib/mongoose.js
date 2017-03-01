@@ -2,11 +2,11 @@
 
 var mongoose = require('mongoose');
 
-module.exports = function(app) {
+module.exports = function (app) {
     /* Database */
     var db = mongoose.connection;
     db.on('error', console.error);
-    db.once('open', function() {
+    db.once('open', function () {
         console.log('connected to db');
     });
     mongoose.Promise = global.Promise;
