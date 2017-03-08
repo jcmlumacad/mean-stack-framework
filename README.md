@@ -57,7 +57,7 @@ route.delete('<uri>', '<controller>@<method>', [<middlewares>])
 route.resource('<uri>', '<controller>@<method>', [<middlewares>], {only|except})
 ```
 
-In `resource` method, it has `get`, `post`, `update`, and `delete` method provided. The following methods in controller that uses `resource` method:
+In `resource` method, it provides `get`, `post`, `update`, and `delete` method. These are the following methods in controller that uses `resource` method:
 
 - `index` for **GET** Method
 - `create` for **GET** Method
