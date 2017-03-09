@@ -1,5 +1,5 @@
 'use strict';
 
-var User = require('./user.model');
+var User = require('./user.entity');
 
 module.exports = function (method) {};
