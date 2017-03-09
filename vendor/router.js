@@ -9,9 +9,10 @@ module.exports = {
     config: {
         app: null,
         set: function (controller) {
+            var str = controller.split('@');
             router = {
-                str: controller.split('@'),
-                controller: controller.split('@').shift().toController()
+                str: str,
+                controller: str.shift().toController()
             };
         },
         callback: function (res, req, next) {
