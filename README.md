@@ -30,31 +30,31 @@ node server.js
 **GET Method**
 
 ```js
-route.get('<uri>', '<controller>@<method>', [<middlewares>])
+route.get('<uri>', '<controller>@<method>', [<middlewares>], '<module>')
 ```
 
 **POST Method**
 
 ```js
-route.post('<uri>', '<controller>@<method>', [<middlewares>])
+route.post('<uri>', '<controller>@<method>', [<middlewares>], '<module>')
 ```
 
 **UPDATE Method**
 
 ```js
-route.update('<uri>', '<controller>@<method>', [<middlewares>])
+route.update('<uri>', '<controller>@<method>', [<middlewares>], '<module>')
 ```
 
 **DELETE Method**
 
 ```js
-route.delete('<uri>', '<controller>@<method>', [<middlewares>])
+route.delete('<uri>', '<controller>@<method>', [<middlewares>], '<module>')
 ```
 
 **RESOURCE Method**
 
 ```js
-route.resource('<uri>', '<controller>@<method>', [<middlewares>], {only|except})
+route.resource('<uri>', '<controller>@<method>', [<middlewares>], '<module>', {only|except})
 ```
 
 In `resource` method, it provides `get`, `post`, `update`, and `delete` method. These are the following methods in controller that uses `resource` method:
@@ -74,7 +74,7 @@ You can also limit by using `only` or `except`. See example below:
 ```js
 module.exports = function (app) {
     ...
-    route.resource('/user', 'UserController', ['user.middleware.client'], {
+    route.resource('/user', 'UserController', ['user.middleware.client'], 'user', {
         only: ['index', 'show']
     })
     ...
@@ -86,7 +86,7 @@ module.exports = function (app) {
 ```js
 module.exports = function (app) {
     ...
-    route.resource('/api/blog', 'UserController', ['auth.middleware.is.admin'], {
+    route.resource('/api/blog', 'UserController', ['auth.middleware.is.admin'], 'user', {
         except: ['create', 'edit']
     })
     ...
