@@ -74,7 +74,7 @@ You can also limit by using `only` or `except`. See example below:
 ```js
 module.exports = function (app) {
     ...
-    route.resource('/user', 'UserController', ['user.middleware.client'], 'user', {
+    route.resource('/user', 'UserController', ['User::client'], 'User', {
         only: ['index', 'show']
     })
     ...
@@ -86,7 +86,7 @@ module.exports = function (app) {
 ```js
 module.exports = function (app) {
     ...
-    route.resource('/api/blog', 'UserController', ['auth.middleware.is.admin'], 'user', {
+    route.resource('/api/blog', 'UserController', ['Auth::isAdmin'], 'User', {
         except: ['create', 'edit']
     })
     ...
