@@ -2,7 +2,9 @@
 
 var Mongoose = require('mongoose'),
     Schema = Mongoose.Schema,
-    plugin = require('./../../shared/server/shared.schema'),
+    path = require('path'),
+    root = path.dirname(require.main.filename),
+    plugin = require(root + '/modules/Shared/Server/Schemas/shared.schema'),
 
     userSchema = new Mongoose.Schema({
         name: {

@@ -2,8 +2,7 @@
 
 var fs = require('fs'),
     path = require('path'),
-    route = require('../../vendor/router'),
-    middleware = require('./../../modules/core/server/core.middleware');
+    route = require('../../vendor/router');
 
 module.exports = function (app) {
     /* Load All Routes */

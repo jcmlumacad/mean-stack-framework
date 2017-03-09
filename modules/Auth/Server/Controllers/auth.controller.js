@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path'),
+    root = path.dirname(require.main.filename),
     passport = require('passport');
 
 module.exports = function (method) {
@@ -15,7 +16,7 @@ module.exports = function (method) {
     function index() {
         return function (req, res, next) {
             if (req.route.methods.get) {
-                res.sendFile(path.join(__dirname, '../../../resources/views', 'index.html'));
+                res.sendFile(root + '/resources/views/index.html');
             }
         }
     }
@@ -38,7 +39,7 @@ module.exports = function (method) {
                     });
                 })(req, res);
             } else {
-                res.sendFile(path.join(__dirname, '../../../resources/views/auth', 'index.html'));
+                res.sendFile(root + '/resources/views/auth/index.html');
             }
         }
     }
@@ -48,7 +49,7 @@ module.exports = function (method) {
             if ( ! req.route.methods.get) {
                 console.log('TODO: Register');
             } else {
-                res.sendFile(path.join(__dirname, '../../../resources/views/auth', 'index.html'));
+                res.sendFile(root + '/resources/views/auth/index.html');
             }
         }
     }

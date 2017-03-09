@@ -1,5 +1,5 @@
 'use strict';
 
-var User = require('./user.schema');
+var User = require('./../Schemas/user.schema');
 
 module.exports = {};

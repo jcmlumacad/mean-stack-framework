@@ -1,13 +1,15 @@
 'use strict';
 
-var route = require('./../../../vendor/router');
+var path = require('path'),
+    root = path.dirname(require.main.filename),
+    route = require(root + '/vendor/router');
 
 module.exports = function (app) {
-    route.get('/', 'AuthController@index', ['auth.middleware.protect'], 'auth');
+    route.get('/', 'AuthController@index', ['Auth::protect'], 'Auth');
 
-    route.get('/login', 'AuthController@login', [], 'auth');
-    route.get('/register', 'AuthController@register', [], 'auth');
+    route.get('/login', 'AuthController@login', [], 'Auth');
+    route.get('/register', 'AuthController@register', [], 'Auth');
 
-    route.post('/login', 'AuthController@login', [], 'auth');
-    route.post('/register', 'AuthController@register', [], 'auth');
+    route.post('/login', 'AuthController@login', [], 'Auth');
+    route.post('/register', 'AuthController@register', [], 'Auth');
 };
