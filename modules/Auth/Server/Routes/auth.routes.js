@@ -5,11 +5,12 @@ var path = require('path'),
     route = require(root + '/vendor/router');
 
 module.exports = function (app) {
-    route.get('/', 'AuthController@index', ['Auth::protect'], 'Auth');
+    route.setModule('Auth');
 
-    route.get('/login', 'AuthController@login', [], 'Auth');
-    route.get('/register', 'AuthController@register', [], 'Auth');
+    route.get('/', 'AuthController@index', ['Auth::protect']);
+    route.get('/login', 'AuthController@login');
+    route.get('/register', 'AuthController@register');
 
-    route.post('/login', 'AuthController@login', [], 'Auth');
-    route.post('/register', 'AuthController@register', [], 'Auth');
+    route.post('/login', 'AuthController@login');
+    route.post('/register', 'AuthController@register');
 };
