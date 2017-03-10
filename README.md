@@ -73,10 +73,11 @@ You can also limit by using `only` or `except`. See example below:
 
 ```js
 module.exports = function (app) {
+    route.setModule('User');
     ...
-    route.resource('/user', 'UserController', ['User::client'], 'User', {
+    route.resource('/user', 'UserController', ['User::client'], {
         only: ['index', 'show']
-    })
+    });
     ...
 }
 ``` 
@@ -85,10 +86,11 @@ module.exports = function (app) {
 
 ```js
 module.exports = function (app) {
+    route.setModule('Blog');
     ...
-    route.resource('/api/blog', 'UserController', ['Auth::isAdmin'], 'User', {
+    route.resource('/api/blog', 'UserController', ['Auth::isAdmin'], {
         except: ['create', 'edit']
-    })
+    });
     ...
 }
 ```
