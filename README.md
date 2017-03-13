@@ -95,6 +95,16 @@ module.exports = function (app) {
 }
 ```
 
+### Route Groups
+
+```js
+route.group({ prefix: 'foo', middleware: ['Foo::bar', 'John::doe'] }, function () {
+   ...
+   // Insert route methods here
+   ... 
+});
+```
+
 ## Credits
 
   - [Abel's Mean Stack](https://github.com/abelardovaje/mean-stack-chat-room)
