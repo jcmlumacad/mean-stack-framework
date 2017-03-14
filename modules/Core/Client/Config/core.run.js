@@ -12,9 +12,11 @@
 
     function coreRun(ResponseErrorEvent) {
         // Listener for response error event
-        ResponseErrorEvent.listen(function(event, errorMessage) {
-            // Handle errors
-            alert(errorMessage);
+        ResponseErrorEvent.listen(function(event, errorMessage, status) {
+            // Handle error
+            if (status !== -1) {
+                alert(errorMessage);
+            }
         });
     }
 })();
