@@ -30,31 +30,31 @@ node server.js
 **GET Method**
 
 ```js
-route.get('<uri>', '<controller>@<method>', [<middlewares>], '<module>')
+route.get('<uri>', '<controller>@<method>', [<middlewares>])
 ```
 
 **POST Method**
 
 ```js
-route.post('<uri>', '<controller>@<method>', [<middlewares>], '<module>')
+route.post('<uri>', '<controller>@<method>', [<middlewares>])
 ```
 
 **UPDATE Method**
 
 ```js
-route.update('<uri>', '<controller>@<method>', [<middlewares>], '<module>')
+route.update('<uri>', '<controller>@<method>', [<middlewares>])
 ```
 
 **DELETE Method**
 
 ```js
-route.delete('<uri>', '<controller>@<method>', [<middlewares>], '<module>')
+route.delete('<uri>', '<controller>@<method>', [<middlewares>])
 ```
 
 **RESOURCE Method**
 
 ```js
-route.resource('<uri>', '<controller>@<method>', [<middlewares>], '<module>', {only|except})
+route.resource('<uri>', '<controller>@<method>', [<middlewares>], {only|except})
 ```
 
 In `resource` method, it provides `get`, `post`, `update`, and `delete` method. These are the following methods in controller that uses `resource` method:
@@ -104,6 +104,8 @@ route.group({ prefix: 'foo', middleware: ['Foo::bar', 'John::doe'] }, function (
    ... 
 });
 ```
+
+**Note: Not yet implemented -- Nested Route Groups**
 
 ## Credits
 
