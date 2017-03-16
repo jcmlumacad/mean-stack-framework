@@ -1,7 +1,6 @@
 {
   "name": "mean-stack-framework",
   "description": "Abel's Mean Framework",
-  "main": "",
   "authors": [
     "John Conrad Lumacad <jcmlumacad@tmj.ph>"
   ],
@@ -20,6 +19,7 @@
     "angular-ui-router": "^0.3.2",
     "bootstrap": "^3.3.7",
     "angular-deferred-bootstrap": "^0.1.9",
-    "angular-resource": "^1.6.1"
+    "angular-resource": "^1.6.1",
+    "font-awesome": "^4.7.0"
   }
 }
