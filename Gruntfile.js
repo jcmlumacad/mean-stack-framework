@@ -89,10 +89,9 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    { expand: true, cwd: 'resources/assets/fonts', src: ['**'], dest: 'public/assets/fonts' },
-                    { expand: true, cwd: 'bower_components/font-awesome/fonts', src: ['**'], dest: 'public/assets/fonts' },
-                    { expand: true, cwd: 'bower_components/bootstrap/dist', src: ['**'], dest: 'public/assets/bootstrap' },
-                    { expand: true, flatten: true, cwd: 'bower_components/', src: ['**/*.min.js', '**/*.min.js.map'], dest: 'public/assets/js', filter: 'isFile' }
+                  { expand: true, cwd: 'resources/assets/fonts', src: ['**'], dest: 'public/assets/fonts' },
+                  { expand: true, cwd: 'bower_components/font-awesome/fonts', src: ['**'], dest: 'public/assets/fonts' },
+                  { expand: true, cwd: 'bower_components/bootstrap/dist', src: ['**'], dest: 'public/assets/bootstrap' }
                 ]
             }
         }
@@ -103,5 +102,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.registerTask('default', ['browserify', 'uglify', 'sass', 'copy', 'watch']);
+    grunt.registerTask('default', ['browserify', 'sass', 'copy', 'watch']);
+    grunt.registerTask('prod', ['browserify', 'uglify', 'sass', 'copy', 'watch']);
 };
