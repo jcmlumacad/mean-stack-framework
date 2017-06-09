@@ -1,6 +1,5 @@
 var ctrl = require('./controller'),
     middleware = require('./middleware'),
-    resources = require('./resources'),
     router,
     opts;
 
@@ -47,11 +46,13 @@ module.exports = {
     resource: function (uri, controller, middlewares, options) {
         this.config.set(controller);
         var $this = this;
+        var resources = require('./resources');
+
         resources = resources.filter(function(value) {
             if (options !== undefined && options.only !== undefined)
                 return options.only.indexOf(value) !== -1;
             if (options !== undefined && options.except !== undefined)
-                return options.except.indexOf(value) !== 0;
+                return options.except.indexOf(value) === 1;
             return true;
         });
         resources.forEach(function (resource) {
@@ -81,6 +82,7 @@ module.exports = {
     },
     group: function (options, callback) {
         opts = options;
+        callback(opts);
     },
     endGroup: function () {
         opts = undefined;
